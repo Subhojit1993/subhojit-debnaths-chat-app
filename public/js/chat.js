@@ -14,6 +14,7 @@ const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
 // action buttons
 const $sendLocationButton = document.querySelector("#send-location");
 const $leave_chat_button = document.querySelector("#leave_chat_button");
+const $mobile_leave_chat_button = document.querySelector("#mobile_leave_chat_button");
 
 // Options
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
@@ -77,9 +78,14 @@ socket.on('coords', (coords) => {
 })
 
 $leave_chat_button.addEventListener('click', () => {
-    window.history.go();
-    window.location.href = "/";
+    location.href = "/";
 })
+
+if($mobile_leave_chat_button) {
+    $mobile_leave_chat_button.addEventListener('click', () => {
+        location.href = "/";
+    })
+}
 
 document.querySelector("#message_form").addEventListener('submit', (e) => {
     e.preventDefault();

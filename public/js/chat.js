@@ -133,7 +133,8 @@ document.querySelector("#send-location").addEventListener('click', () => {
 socket.emit('join', { username, room }, (error) => {
     if (error) {
         alert(error);
-        location.href = "/";
+        window.history.go();
+        window.location.href = "/";
     }
 })
 

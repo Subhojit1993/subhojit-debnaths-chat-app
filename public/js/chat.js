@@ -77,7 +77,8 @@ socket.on('coords', (coords) => {
 })
 
 $leave_chat_button.addEventListener('click', () => {
-    location.href = "/";
+    window.history.go();
+    window.location.href = "/";
 })
 
 document.querySelector("#message_form").addEventListener('submit', (e) => {
@@ -133,8 +134,7 @@ document.querySelector("#send-location").addEventListener('click', () => {
 socket.emit('join', { username, room }, (error) => {
     if (error) {
         alert(error);
-        window.history.go();
-        window.location.href = "/";
+        location.href = "/";
     }
 })
 

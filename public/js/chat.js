@@ -69,6 +69,7 @@ socket.on("roomData", ({ room, users }) => {
         users
     })
     document.querySelector("#sidebar").innerHTML = html;
+    document.querySelector("#mobile_sidebar").innerHTML = html;
 })
 
 socket.on('coords', (coords) => {
